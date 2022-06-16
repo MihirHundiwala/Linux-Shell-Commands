@@ -1,6 +1,6 @@
 #!/bin/bash/
 
-string="$(cat sample.txt)"
+string="$(cat ./sampleTexts/long.txt)"
 
 n=10
 echo "---- Display first n characters ----"
