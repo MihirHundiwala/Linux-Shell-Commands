@@ -1,32 +1,24 @@
 #!/bin/bash
-
-string=\
-'00
-00
-10
-00
-aa
-aa
-AA'
+filepath='sampleTexts/uniq.txt'
 
 echo -e "\n---- Remove consecutive duplicate lines ----"
-echo "$string" | uniq
+uniq $filepath
 
 echo -e "\n---- Get count of consecutive duplicate lines----"
-echo "$string" | uniq -c
+uniq -c $filepath
 
 echo -e "\n ---- Remove consecutive duplicate lines ignoring case (using -i) ----"
-echo "$string" | uniq -ci
+uniq -ci $filepath
 
 echo -e "\n---- Remove duplicate lines, compare by skipping first n characters using -s n ----"
-echo "$string" | uniq -s 1
+uniq -s 1 $filepath
 echo -e "---- Remove duplicate lines, compare by considering only first n characters using -w n ----"
 echo -e "---- Remove duplicate lines, compare by skipping first n fields using -f n ----"
 
 echo -e "\n ---- Only print lines which dont have consecutive duplicates ----"
-echo "$string" | uniq -u
+uniq -u $filepath
 
 echo -e "\n---- Only print lines which have consecutive duplicates (without duplicates using -d) ----"
-echo "$string" | uniq -d
+uniq -d $filepath
 echo -e "\n---- Only print lines which have consecutive duplicates (with duplicates using -D) ----"
-echo "$string" | uniq -D
+uniq -D $filepath
